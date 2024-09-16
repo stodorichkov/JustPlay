@@ -1,4 +1,4 @@
-import {Slider} from "@mui/material";
+import {Slider, Stack} from "@mui/material";
 import {useState} from "react";
 
 const formatTime = (seconds: number) => {

@@ -1,5 +1,9 @@
 const SliceConstants = {
-    MODE: "mode"
+    ROOT: "root",
+    MODE: "mode",
+    SHUFFLE: "shuffle",
+    REPEAT: "repeat",
+    VOLUME: "volume"
 }
 
 export default SliceConstants;

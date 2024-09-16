@@ -1,23 +1,25 @@
 import {FC} from "react";
-import {Grid2, Theme, Typography, useTheme} from "@mui/material";
+import {Stack, Grid2} from "@mui/material";
 import {playerBarStyle} from "../../style/style";
 import TimeSlider from "./TimeSlider";
-import * as colors from '@mui/material/colors';
+import {useSelector} from "react-redux";
+import {RootState} from "../../store/store";
+import LeftControls from "./LeftControls";
+import SongTitle from "./SongTitle";
+import RightControls from "./RightControls";
 
 const PlayerBar: FC = () => {
-    const theme: Theme = useTheme()
-
-    console.log(colors.red[500])
-    console.log(colors)
+    const mode = useSelector((state: RootState) => state.mode)
 
     return (
-        <Grid2 container sx={playerBarStyle(theme)}>
+        <Stack direction="column" sx={playerBarStyle(mode)}>
             <TimeSlider/>
-            <Grid2 size={6}>
-                <Typography>fjaf</Typography>
+            <Grid2 container sx={{justifyContent: "center", alignItems: "center", height: 1}}>
+                <LeftControls/>
+                <SongTitle/>
+                <RightControls/>
             </Grid2>
-
-        </Grid2>
+        </Stack>
     );
 }
 
